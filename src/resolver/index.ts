@@ -7,9 +7,10 @@ export default {
     posts: async () => await Post.find()
   },
   Mutation: {
-    addPost(root: any, args: any, context: any) {
-      console.log(root, args, context);
-      return root.posts();
+    async addPost(root, args, context, info) {
+      console.log('root', root, 'args', args, 'ctx', context, 'info', info);
+      const post = await Post.create(args);
+      return post;
     }
   }
 }

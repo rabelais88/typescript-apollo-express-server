@@ -9,9 +9,9 @@ export default gql`
 
   type Query {
     hello: String
-    posts: [Post]
+    posts: [Post]!
   }
   type Mutation {
-    addPost(title: String!, context: String!, file: String): Boolean
+    addPost(title: String!, context: String!, file: String): Post!
   }
 `;
