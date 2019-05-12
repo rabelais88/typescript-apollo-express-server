@@ -10,6 +10,8 @@ export default gql`
   type Query {
     hello: String
     posts: [Post]!
+    admin: Boolean!
+    login: String!
   }
   type Mutation {
     addPost(title: String!, context: String!, file: String): Post!
